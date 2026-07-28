@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from, to: booking.email ? [destination, booking.email] : [destination],
+      from, to: [destination],
       subject: `Новая запись: ${booking.name} · ${booking.time}`,
       text: `Бека Лох — подтверждение записи\n\nКлиент: ${booking.name}\nТелефон: ${booking.phone}\nМастер: ${booking.master}\nУслуга: ${booking.service}\nКогда: ${booking.date}, ${booking.time}\n\nЖдём вас в Бека Лох.`,
     }),
