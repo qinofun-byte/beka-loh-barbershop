@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: beka-loh-barbershop
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start -- --hostname 0.0.0.0 --port $PORT
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: RESEND_API_KEY
+        sync: false
+      - key: BOOKING_EMAIL
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
